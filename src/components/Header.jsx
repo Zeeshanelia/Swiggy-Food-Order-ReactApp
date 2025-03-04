@@ -44,30 +44,30 @@ export const Header = () => {
     return (
         <>
             <div onClick={closeDrawer}
-                className="black-overlay w-full h-full fixed top-0 left-0 duration-700 ease-in-out"
+                className="black-overlay w-full h-full fixed top-0 left-0 duration-700 ease-in-out "
                 style={{ opacity: toggle ? 1 : 0, visibility: toggle ? 'visible' : 'hidden' }}>
 
                 <div onClick={(e)=>{
                     e.stopPropagation()
-                }} className="w-[500px] bg-white shadow-xl h-full    duration-600 ease-in-out" 
-                    style={{ left: toggle ? "0%" : "-100%" }}>
+                }} className="w-[500px] bg-white shadow-xl z-40 h-full    duration-600 ease-in-out   fixed top-0  " 
+                    style={{ left: toggle ? "0%" : "-100%" ,  zIndex: 50, transition: "left 0.5s ease-in-out" }}>
                 </div>
             </div>
 
             <header className="shadow-xl p-3">
-                <div className="  mx-auto max-w-[65rem] flex items-center">
+                <div className="  md:mx-auto md:max-w-[65rem] md:flex items-center">
                     <div className="w-16">
                         <img src="img/Swiggy-logo.png" alt="Logo" />
                     </div>
 
-                    <div className="">
-                        <span className="font-bold underline"> Ratnada </span>
+                    <div className=" hidden sm:block">
+                        <span className="font-bold underline "> Ratnada </span>
                         Jodhpur, Rajasthan 342001  <RxCaretDown onClick={openDrawer} className="inline text-orange-600 text-2xl font-extrabold cursor-pointer" />
                     </div>
 
-                    <nav className="flex ml-auto gap-4 list-none">
+                    <nav className="hidden sm:block md:flex ml-auto gap-4 list-none">
                         {Links.map((link, index) => (
-                            <li key={index} className="flex items-center gap-1 cursor-pointer hover:text-orange-600 ">
+                            <li key={index} className="flex items-center  gap-1 cursor-pointer hover:text-orange-600 ">
                                 {link.icon}
                                 {link.name}
                                 <sup>{link.sup}</sup>

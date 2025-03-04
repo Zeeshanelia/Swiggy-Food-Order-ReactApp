@@ -1,31 +1,24 @@
 import { useEffect, useState } from "react";
 import { FaArrowRight } from "react-icons/fa6";
 import { FaArrowLeft } from "react-icons/fa6";
+import { TbStar } from "react-icons/tb";
 
-export const Body = () => {
+export const OnYourMindSection = () => {
     const [sliding, setSliding] = useState(0)
     const [slider, setSlider] = useState([
+
+
+       
         {
-            title: 'Daal',
-            Thumbnail: '/img/daal.jpg',
-        },
-        {
-            title: 'Rice',
-            Thumbnail: '/img/rice.jpg',
-        },
-        {
-            title: 'Pizza',
-            Thumbnail: '/img/pizza.jpeg',
-        },
-        {
-            title: 'Allo Bhujia',
-            Thumbnail: '/img/allo bhujia.jpg',
-        },
-        {
+            More: 'Chines , Asians,Tibetan, Desserts Rohini  More',
+            Discription: <><TbStar /> 4.1 25-30 mins</>,
             title: 'Burger',
             Thumbnail: '/img/burger.jpeg',
         },
         {
+            
+            More: 'Chines , Asians,Tibetan, Desserts Rohini  More',
+            Discription: <><TbStar /> 4.1 25-30 mins</>,
             title: 'Chaomian',
             Thumbnail: '/img/chaomian.jpeg',
         },
@@ -41,15 +34,7 @@ export const Body = () => {
             title: 'Nodles',
             Thumbnail: '/img/nodles.jpeg',
         },
-        {
-            title: 'Pasta',
-            Thumbnail: '/img/pasta.jpg',
-        },
 
-        {
-            title: 'Salads',
-            Thumbnail: '/img/salads.jpeg',
-        },
         {
             title: 'Sweet',
             Thumbnail: '/img/sweet.jpeg',
@@ -63,8 +48,16 @@ export const Body = () => {
             Thumbnail: '/img/26.jpeg',
         },
         {
-            title: 'Malai Boti',
-            Thumbnail: '/img/15.jpg',
+            title: 'Biryani',
+            Thumbnail: '/img/27.jpeg',
+        },
+        {
+            title: 'Chapli Kabab',
+            Thumbnail: '/img/28.jpeg',
+        },
+        {
+            title: 'Chapli Kabab',
+            Thumbnail: '/img/28.jpeg',
         },
     ]);
 
@@ -85,7 +78,7 @@ export const Body = () => {
         <>
             <div className="mx-auto max-w-[66rem] my-5">
                 <div className="flex justify-between ">
-                    <div className="font-bold text-xl ml-[.2rem]">What's on your mind?</div>
+                    <div className="font-bold text-xl ml-[.2rem]">Top restourent chains in Dehli  </div>
                     <div className="flex">
 
                         <div onClick={prevClick} className="w-8 h-8 rounded-full bg-gray-400 mx-1 flex items-center justify-center">
@@ -99,23 +92,34 @@ export const Body = () => {
                 </div>
 
                 {/* Displaying the slider items */}
-                <div className="flex overflow-hidden gap-1   my-2">
+                <div className="flex overflow-hidden    my-2">
                     {slider.map((item, index) => {
                         return (
-                            <div style={{
-                                transform: `translateX(${sliding * 100}%)`,
-                                transition: "transform 0.3s ease"
-                            }} key={index} className=" shrink-0 
-                            mr-[0.2rem]  mx-3 ">
-                                <img src={item.Thumbnail} alt={item.title} className="w-28 h-28 items-center rounded-full" />
-                                <div className="text-center font-medium mt-1">{item.title}</div>
+                            <div className=" shrink-0 
+                            mr-[0.2rem]  mx-3 "
+
+                                style={{
+                                    transform: `translateX(${sliding * 100}%)`,
+                                    transition: "transform 0.3s ease"
+                                }} key={index} >
+
+                                <img src={item.Thumbnail}
+                                    className="w-56 h-30  rounded" />
+
+
+                               <div>
+                               <div className=" font-medium mt-1">{item.title}</div>
+                                <div className=" text-xs flex ">
+                                    {item.Discription}</div>
+                                <div className=" text-xs text-gray-400">{item.More}</div>
+                               </div>
                             </div>
                         );
                     })}
                 </div>
             </div>
 
-            <hr className="mt-5" />
+            {/* <hr className="mt-5" /> */}
         </>
     );
 };

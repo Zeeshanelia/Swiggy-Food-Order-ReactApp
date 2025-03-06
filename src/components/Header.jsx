@@ -11,12 +11,10 @@ export const Header = () => {
     const [toggle, setToggle] = useState(false);
 
     const openDrawer = () => {
-        setToggle(true);
-    };
+        setToggle(true); };
 
     const closeDrawer = () => {
-        setToggle(false);
-    };
+        setToggle(false);};
     const Links = [ {
             icon: <IoSearch />,
             name: "Search"
@@ -40,7 +38,6 @@ export const Header = () => {
             sup: "2"
         },]
 
-
     return (
         <>
             <div onClick={closeDrawer}
@@ -49,8 +46,9 @@ export const Header = () => {
 
                 <div onClick={(e)=>{
                     e.stopPropagation()
-                }} className="w-[500px] bg-white shadow-xl z-40 h-full    duration-600 ease-in-out   fixed top-0  " 
-                    style={{ left: toggle ? "0%" : "-100%" ,  zIndex: 50, transition: "left 0.5s ease-in-out" }}>
+                }} className="w-[500px] bg-white shadow-xl  h-full    duration-500 ease-in-out   fixed top-0  " 
+                    style={{ left: toggle ? "0%" : "-100%" ,  
+                        transition: " 0.5s ease-in-out" }}>
                 </div>
             </div>
 
@@ -60,7 +58,7 @@ export const Header = () => {
                         <img src="img/Swiggy-logo.png" alt="Logo" />
                     </div>
 
-                    <div className=" hidden sm:block">
+                    <div className=" mx-5 bg-gray-100 rounded-full px-2 md:py-1">
                         <span className="font-bold underline "> Ratnada </span>
                         Jodhpur, Rajasthan 342001  <RxCaretDown onClick={openDrawer} className="inline text-orange-600 text-2xl font-extrabold cursor-pointer" />
                     </div>
